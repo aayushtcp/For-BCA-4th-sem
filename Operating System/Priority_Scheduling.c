@@ -1,58 +1,66 @@
 #include <stdio.h>
+#include <string.h>
 int main()
 {
-    int bt[20], p[20], wt[20], tat[20], pr[20], i, j, n, total = 0, pos, temp, avg_wt, avg_tat;
-    printf("Enter Total Number of Process:");
+    int et[20], at[10], n, i, j, temp, p[10], st[10], ft[10], wt[10], ta[10];
+    int totwt = 0, totta = 0;
+    float awt, ata;
+    char pn[10][10], t[10];
+    // clrscr();
+    printf("Enter the number of process:");
     scanf("%d", &n);
-    printf("\nEnter Burst Time and Priority\n");
     for (i = 0; i < n; i++)
     {
-        printf("\nP[%d]\n", i + 1);
-        printf("Burst Time:");
-        scanf("%d", &bt[i]);
-        printf("Priority:");
-        scanf("%d", &pr[i]);
-        p[i] = i + 1; // contains process number
+        printf("Enter process name,arrivaltime,execution time & priority:");
+        // flushall();
+        scanf("%s%d%d%d", pn[i], &at[i], &et[i], &p[i]);
     }
-    // sorting burst time, priority and process number in ascending order using selection sort
     for (i = 0; i < n; i++)
-    {
-        pos = i;
-        for (j = i + 1; j < n; j++)
+        for (j = 0; j < n; j++)
         {
-            if (pr[j] < pr[pos])
-                pos = j;
+            if (p[i] < p[j])
+            {
+                temp = p[i];
+                p[i] = p[j];
+                p[j] = temp;
+                temp = at[i];
+                at[i] = at[j];
+                at[j] = temp;
+                temp = et[i];
+                et[i] = et[j];
+                et[j] = temp;
+                strcpy(t, pn[i]);
+                strcpy(pn[i], pn[j]);
+                strcpy(pn[j], t);
+            }
         }
-        temp = pr[i];
-        pr[i] = pr[pos];
-        pr[pos] = temp;
-        temp = bt[i];
-        bt[i] = bt[pos];
-        bt[pos] = temp;
-        temp = p[i];
-        p[i] = p[pos];
-        p[pos] = temp;
-    }
-    wt[0] = 0; // waiting time for first process is zero
-    // calculate waiting time
-    for (i = 1; i < n; i++)
-    {
-        wt[i] = 0;
-        for (j = 0; j < i; j++)
-            wt[i] += bt[j];
-        total += wt[i];
-    }
-    avg_wt = total / n; // average waiting time
-    total = 0;
-    printf("\nProcess\t    Burst Time    \tWaiting Time\tTurnaround Time");
     for (i = 0; i < n; i++)
+
     {
-        tat[i] = bt[i] + wt[i]; // calculate turnaround time
-        total += tat[i];
-        printf("\nP[%d]\t\t  %d\t\t    %d\t\t\t%d", p[i], bt[i], wt[i], tat[i]);
+
+        if (i == 0)
+        {
+            st[i] = at[i];
+            wt[i] = st[i] - at[i];
+            ft[i] = st[i] + et[i];
+            ta[i] = ft[i] - at[i];
+        }
+        else
+        {
+            st[i] = ft[i - 1];
+            wt[i] = st[i] - at[i];
+            ft[i] = st[i] + et[i];
+            ta[i] = ft[i] - at[i];
+        }
+        totwt += wt[i];
+        totta += ta[i];
     }
-    avg_tat = total / n; // average turnaround time
-    printf("\n\nAverage Waiting Time=%d", avg_wt);
-    printf("\nAverage Turnaround Time=%d\n", avg_tat);
+    awt = (float)totwt / n;
+    ata = (float)totta / n;
+    printf("\nPname\tarrivaltime\texecutiontime\tpriority\twaitingtime\ttatime");
+    for (i = 0; i < n; i++)
+        printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d\t\t%5d", pn[i], at[i], et[i], p[i], wt[i], ta[i]);
+    printf("\nAverage waiting time is:%f", awt);
+    printf("\nAverage turnaroundtime is:%f", ata);
     return 0;
 }
