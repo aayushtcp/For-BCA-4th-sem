@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Display Example</title>
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    .formdiv {
+        width: 40vw;
+        height: 30vw;
+        background-color: hotpink;
+        margin: auto;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .formdiv h3 {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    button {
+        padding: 10px;
+        background: black;
+        border-radius: 6px;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+    }
+
+    .middle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <center>
+        <h2>Click to One date in popup View</h2>
+        <button onclick="popup()">OpenDate</button>
+    </center>
+    <div class="formdiv">
+        <form action="">
+            <h3 id="cut">X</h3>
+            <div class="middle">
+                <h1>Today's Date</h1>
+                <h3 id="datetext"></h3>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function popup() {
+            document.querySelector(".formdiv").style.display = "block";
+
+            let currentDate = new Date();
+
+            let dateString = currentDate.toDateString();
+            document.getElementById('datetext').innerText = dateString;
+        }
+
+        document.querySelector("#cut").addEventListener("click", function () {
+            document.querySelector(".formdiv").style.display = "none";
+        });
+
+    </script>
+
+</body>
+
+</html>
