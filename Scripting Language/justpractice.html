@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Class one</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .btn {
+        padding: 7px;
+        background-color: red;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <br><br>
+    <form action="">
+        Number: <input type="text" id="number">
+        <input type="submit" class="btn" value="Check" onclick="numberCheck()">
+    </form>
+    <script>
+        var mobilePattern = /^9\d{9}$/;
+        function numberCheck(){
+            let number = document.getElementById("number").value;
+            if(mobilePattern.test(number)){
+                alert("Number verified");
+            }
+            else{
+                alert("Number not verified");
+            }
+        }
+    </script>
+</body>
+</html>
