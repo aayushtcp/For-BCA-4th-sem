@@ -1,3 +1,4 @@
+<!-- Write a php program to find the greatest number among three numbers -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,10 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="numberone">
-        <input type="text" name="numbertwo">
-        <input type="text" name="numberthree">
-        <input type="submit" value="submit">
+        <input type="text" name="numberone" placeholder="Number 1">
+        <input type="text" name="numbertwo" placeholder="Number 2">
+        <input type="text" name="numberthree" placeholder="Number 3">
+        <input type="submit" value="Greatest">
     </form>
     <?php
         if($_SERVER["REQUEST_METHOD"] == 'POST'){
