@@ -1,3 +1,8 @@
+<!-- Note: You need XAMPP setup or any kind of PHP setup to run this programs in your system -->
+<!-- IF you have XAMPP then put these files upder "htdocs" folder to run it -->
+<!-- Yeti ni garna aaudaina bhane na gar kei ni mugi -->
+
+
 <!-- Write a php program to find the greatest number among three numbers -->
 <!DOCTYPE html>
 <html lang="en">
