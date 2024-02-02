@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .fullview {
+        display: none;
+        padding: 10vw;
+        background-color: violet;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <!-- for q1 -->
+    <h1>Alert Practice</h1>
+    <!-- for q2 -->
+    <button onclick="addTen()">Click Me</button>
+    <h2 id="result"></h2>
+    <!-- for q3 -->
+    <form action="">
+        <label for="">String:</label>
+        <input type="text" id="string">
+        <input type="submit" value="Test String" onclick="testString()">
+    </form>
+    <!-- for q4 -->
+    <form action="">
+        <label for="">Phone:</label>
+        <input type="text" id="phone">
+        <input type="submit" value="Test Number" onclick="testPhone()">
+    </form>
+    <!-- for q5 -->
+    <button onclick="openPopup()">POPUP</button>
+    <center>
+        <div class="fullview" id="fullview">
+            <h3 style="cursor: pointer;" id="cut" onclick="closePopup()">Close</h3>
+            <h1 id="dateView"></h1>
+        </div>
+    </center>
+    <!-- for q6 -->
+    <form action="">
+        CookieName: <input type="text" id="cookieName" />
+        <input type="submit" value="SetCookie">
+    </form>
+    <!-- for q7 -->
+
+    <h2 id="toogleTarget">Toogle this text</h2>
+    <button onclick="toggleElement()">Toggle</button>
+    <script>
+        // q1 alert practice
+        // alert('Alert practice');
+
+        // q2 adding 10 each time
+        let target = document.getElementById('result');
+        let count = 0;
+        function addTen() {
+            count = count + 10;
+            target.innerHTML = count;
+        }
+        // q3  Write a JavaScript program to test whether the first character of a string is uppercase or not.
+        var stringTester = /^[A-Z]/g;
+        function testString() {
+            let stringTarget = document.getElementById('string').value;
+            if (stringTester.test(stringTarget)) {
+                alert('The first character is uppercase');
+            }
+            else {
+                alert('The first character is not uppercase');
+            }
+        }
+        // q4 Write a JavaScript program to test whether the given number is mobile number or not.
+        var mobileTester = /^9\d{9}$/;
+        function testPhone() {
+            let phoneTarget = document.getElementById('phone').value;
+            if (mobileTester.test(phoneTarget)) {
+                alert('The given number is mobile number');
+            }
+            else {
+                alert('The given number is not mobile number');
+            }
+        }
+        // q5
+        let open = document.querySelector('#fullview');
+        function openPopup() {
+            let fordate = document.querySelector('#dateView');
+            open.style.display = 'block';
+
+            date = new Date();
+            currentDate = date.toDateString();
+            fordate.innerHTML = currentDate;
+        }
+        function closePopup() {
+            open.style.display = 'none';
+        }
+        // q6 Write a JS function to create a cookie that stores the user’s name for a week.
+        // let username = document.getElementById('cookieName').value;
+        let username = prompt("Enter your name: ");
+
+        function setUserCookie() {
+            var d= new Date();
+            expires = d.setTime(d.getTime() + (7*24*60*60*1000));
+            document.cookie = "username=" + username + ";expires=" + d.toUTCString() + ";path=/";
+            alert("Username: " + username);
+            console.log("Username: " + username);
+        }
+        setUserCookie();
+        // q7 Write a JS program to show functionality of innerHTML. Where message button displays the hidden message and same for list button
+        function toggleElement() {
+            let toggleTarget = document.querySelector('#toogleTarget');
+            toggleTarget.toggleAttribute('hidden');
+            if (toggleTarget.hasAttribute('hidden')) {
+                toggleTarget.innerHTML = "";
+            } else {
+                toggleTarget.innerHTML = 'You found me';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
