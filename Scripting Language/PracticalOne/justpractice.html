@@ -1,40 +1,18 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Class one</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: sans-serif;
-    }
-    .btn {
-        padding: 7px;
-        background-color: red;
-        border: none;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-</style>
 <body>
-    <br><br>
-    <form action="">
-        Number: <input type="text" id="number">
-        <input type="submit" class="btn" value="Check" onclick="numberCheck()">
-    </form>
+    <h1>Loop</h1>
     <script>
-        var mobilePattern = /^9\d{9}$/;
-        function numberCheck(){
-            let number = document.getElementById("number").value;
-            if(mobilePattern.test(number)){
-                alert("Number verified");
-            }
-            else{
-                alert("Number not verified");
-            }
+        var colors =["black", "red", "green"];
+        function changeColor(){
+            document.body.style.backgroundColor= colors[Math.floor(Math.random()*colors.length)];
         }
+        setInterval(changeColor, 1000);
     </script>
 </body>
 </html>

@@ -58,6 +58,7 @@
         // q1 alert practice
         // alert('Alert practice');
 
+        
         // q2 adding 10 each time
         let target = document.getElementById('result');
         let count = 0;
@@ -65,6 +66,8 @@
             count = count + 10;
             target.innerHTML = count;
         }
+
+
         // q3  Write a JavaScript program to test whether the first character of a string is uppercase or not.
         var stringTester = /^[A-Z]/g;
         function testString() {
@@ -76,6 +79,8 @@
                 alert('The first character is not uppercase');
             }
         }
+
+
         // q4 Write a JavaScript program to test whether the given number is mobile number or not.
         var mobileTester = /^9\d{9}$/;
         function testPhone() {
@@ -87,7 +92,9 @@
                 alert('The given number is not mobile number');
             }
         }
-        // q5
+
+
+        // q5 Develop and demonstrate JS with POP-UP boxes and functions for the following problems:Input: Click on Display Date button using onclick() function Output: Display the Date
         let open = document.querySelector('#fullview');
         function openPopup() {
             let fordate = document.querySelector('#dateView');
@@ -100,18 +107,20 @@
         function closePopup() {
             open.style.display = 'none';
         }
-        // q6 Write a JS function to create a cookie that stores the user’s name for a week.
-        // let username = document.getElementById('cookieName').value;
-        let username = prompt("Enter your name: ");
 
+
+        // q6 Write a JS function to create a cookie that stores the user’s name for a week.
+        let username = prompt("Enter your name: ");
         function setUserCookie() {
-            var d= new Date();
-            expires = d.setTime(d.getTime() + (7*24*60*60*1000));
+            var d = new Date();
+            expires = d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
             document.cookie = "username=" + username + ";expires=" + d.toUTCString() + ";path=/";
             alert("Username: " + username);
             console.log("Username: " + username);
         }
         setUserCookie();
+
+
         // q7 Write a JS program to show functionality of innerHTML. Where message button displays the hidden message and same for list button
         function toggleElement() {
             let toggleTarget = document.querySelector('#toogleTarget');

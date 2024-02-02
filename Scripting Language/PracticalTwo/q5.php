@@ -1,5 +1,4 @@
 <!-- Write a php program that receive a string in form then....-->
-<!-- Write a php program that receive a string in form then....-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
