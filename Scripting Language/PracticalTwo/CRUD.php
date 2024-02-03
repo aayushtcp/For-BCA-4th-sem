@@ -64,26 +64,42 @@
         // create
     </script>
     <?php
-    $conn = new mysqli("localhost", "root", "", "employee");
+    $conn = new mysqli("localhost", "root", "", "myemployees");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['name'], $_POST['phone'], $_POST['address'])) {
+        if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
-            $sql = "INSERT INTO employee(id, name, phone, address) VALUES ('',$name','$phone', '$address')";
+            $sql = mysqli_query($conn, "insert into employee (id,name,phone,address) VALUES ('','$name','$phone','$address')");
             if ($sql) {
                 echo "Employee added successfully";
             } else {
                 echo "Employee not added";
             }
-        } else {
-            echo "Unknown form submitted!";
         }
     }
+    // reading form data base
+    $result = mysqli_query($conn, "SELECT * from employee");
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<br>Name: " . $row['name'] . ", Phone: " . $row['phone'] . ", Address: " . $row['address'] ."- "
+            ."<button onClick='editData()'>Edit</button>"
+            ;
+        }
+    }
+    else{
+        echo "no";
+    }
     ?>
+
+    <script>
+        function editData() {
+            alert("w");
+        }
+    </script>
 </body>
 
 </html>
