@@ -42,24 +42,25 @@
     </form>
     <?php
     // q1
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //     $n1 = $_POST['numberone'];
     //     $n2 = $_POST['numbertwo'];
     //     $n3 = $_POST['numberthree'];
-    //     echo "<h2>Greatest is:" . max($n1, $n2, $n3) . "</h2>";
+
+    //     echo "<h3>The greatest is:". max($n1,$n2,$n3)."</h3>";
     // }
 
 
     // q2
     // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     $evenodd = $_POST['checknumber'];
-    //     if($evenodd%2==0){
+    //     $n1 = $_POST['checknumber'];
+    //     if ($n1 % 2 === 0) {
     //         echo "<h2>Even</h2>";
-    //     }else{
+    //     }
+    //     else{
     //         echo "<h2>Odd</h2>";
     //     }
     // }
-
 
     // TODO: q3 Write a php program to execute Basic mathemathical operation
     // if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -90,15 +91,15 @@
     // }
     // TODO: q4 I am not going to do question 4
     // TODO q5: Write a php program that receive a string in form then....
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $s = $_POST['s'];
-            echo "<h3>The reversed string is: ".strrev($s). "</h3>";
-            echo "<h3>The UpperCase string is: ".strtoupper($s). "</h3>";
-            echo "<h3>The LowerCase string is: ".strtolower($s). "</h3>";
-            echo "<h3>The length of string is: ".strlen($s). "</h3>";
-            echo "<h3>The first character upper string is: ".ucfirst($s). "</h3>";
-            echo "<h3>The all words 1st char string is: ".ucwords($s). "</h3>";
-        }
+    // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //     $s = $_POST['s'];
+    //     echo "<h3>The reversed string is: ".strrev($s). "</h3>";
+    //     echo "<h3>The UpperCase string is: ".strtoupper($s). "</h3>";
+    //     echo "<h3>The LowerCase string is: ".strtolower($s). "</h3>";
+    //     echo "<h3>The length of string is: ".strlen($s). "</h3>";
+    //     echo "<h3>The first character upper string is: ".ucfirst($s). "</h3>";
+    //     echo "<h3>The all words 1st char string is: ".ucwords($s). "</h3>";
+    // }
     // q6
     // q7
     // q8
