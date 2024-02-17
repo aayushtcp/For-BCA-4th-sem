@@ -115,7 +115,8 @@
         }
 
         // update the details
-        if (isset($_POST['updatename'])) {
+        if (isset($_POST['updatefname'])) {
+            $employeeId = $_POST['employee_id'];
             $updatefname = $_POST['updatefname'];
             $updatelname = $_POST['updatelname'];
             $updateemail = $_POST['updateemail'];
