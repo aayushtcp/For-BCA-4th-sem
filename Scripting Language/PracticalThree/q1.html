@@ -1,0 +1,27 @@
+<!-- Write a JQuery Code to show the example of hide and show tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JQuery | Hide and Show</title>
+</head>
+<body>
+
+    <p>If you click on hide button, I will disappear.</p>
+    <button type="button" class="hide-btn">Hide</button>
+    <button type="button" class="show-btn">Show</button>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // to hide
+            $(".hide-btn").click(function(){
+                $("p").hide("very-slow");
+            });
+            // to show
+            $(".show-btn").click(function(){
+                $("p").show("very-slow");
+            });
+        });
+    </script>
+</body>
+</html>

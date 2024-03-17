@@ -1,0 +1,28 @@
+<!-- Write a JQuery Code to disable Copy, Paste, Cut and Right click -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery | Disable</title>
+</head>
+
+<body>
+    <input type="text" id="inputField" placeholder="Try to copy/paste/cut">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // Disable copy, paste, cut
+            $('#inputField').on('copy paste cut', function (e) {
+                e.preventDefault();
+            });
+
+            // Disable right-click context menu
+            $(document).on("contextmenu",function(e){
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+
+</html>

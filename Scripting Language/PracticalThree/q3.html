@@ -1,0 +1,35 @@
+<!-- Write a JQuery Code to distinguish between left and right click -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery | Left Right</title>
+</head>
+
+<body>
+    <h2>Click left or right button of mouse</h2>
+    <button type="button">Click</button>
+    <p class="output"></p>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('button').mousedown(function(event) { 
+            switch (event.which) { 
+                case 1: 
+                    document.querySelector('.output').innerHTML = 
+                        'Left Mouse Button'; 
+                    break;  
+                case 3: 
+                    document.querySelector('.output').innerHTML = 
+                        'Right Mouse Button'; 
+                    break; 
+                default: 
+                    break; 
+            } 
+        }); 
+        });
+    </script>
+</body>
+
+</html>
