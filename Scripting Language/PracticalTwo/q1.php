@@ -4,7 +4,6 @@
 
 
 <!-- Write a php program to find the greatest number among three numbers -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Document</title>
@@ -25,5 +24,4 @@
         }
     ?>
 </body>
-
 </html>

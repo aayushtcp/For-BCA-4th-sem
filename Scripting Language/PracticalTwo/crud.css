@@ -1,0 +1,21 @@
+* {
+    font-family: sans-serif;
+}
+
+.overlay {
+    display: none;
+    width: 400px;
+    height: 80vh;
+    background-color: violet;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.overlay h3 {
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    float: end;
+}

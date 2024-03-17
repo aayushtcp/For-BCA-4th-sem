@@ -1,5 +1,4 @@
 <!-- Write a php program to execute Basic mathemathical operation -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Calculator PHP</title>
@@ -44,7 +43,5 @@
         echo "Result: $result";
     }
     ?>
-
 </body>
-
 </html>

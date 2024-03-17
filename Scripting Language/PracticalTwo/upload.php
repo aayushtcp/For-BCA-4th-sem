@@ -1,6 +1,5 @@
 <?php
 $target_dir = "uploads/";
-
 // if (isset($_POST["submit"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -12,14 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <html>
-
 <body>
     <?php if (isset($target_file)) : ?>
         <img src="<?= $target_file ?>" alt="Uploaded Image">
         <p>Download the image: <a href="<?= $target_file ?>" download>Download</a></p>
     <?php endif; ?>
 </body>
-
 </html>

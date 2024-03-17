@@ -1,6 +1,5 @@
 <!-- Write a php program to check the number is odd or even -->
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Document</title>
 </head>

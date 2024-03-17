@@ -1,5 +1,4 @@
 <!-- Write a php program to input name and address using form and display it -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Document</title>

@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD</title>
+    <link rel="stylesheet" href="crud.css" type="text/css">
 </head>
-<style>
-    * {
-        font-family: sans-serif;
-    }
-
-    .overlay {
-        display: none;
-        width: 400px;
-        height: 80vh;
-        background-color: violet;
-        border-radius: 8px;
-        padding: 20px;
-    }
-
-    .overlay h3 {
-        text-align: center;
-        border: 2px solid red;
-        border-radius: 5px;
-        padding: 5px;
-        cursor: pointer;
-        float: end;
-    }
-</style>
-
 <body>
     <h3>This is just a simple CRUD</h3>
     <button name="mybtn" onclick="openPopup()">Add Employee</button>
-
     <div class="overlay" id="overlay">
         <form action="" method="post" name="form1">
             <!-- Create or Insert Form -->
@@ -42,9 +14,7 @@
             <input type="text" name="lname" placeholder="lname">
             <br><br>
             <input type="email" name="email" placeholder="Email">
-            <br><br>
-            Gender
-            <br>
+            <br><br>Gender<br>
             <input name="gender" type="radio" value="M">Male
             <input name="gender" type="radio" value="F">Female
             <br><br>
@@ -52,7 +22,6 @@
         </form>
         <h3 onclick="closePopup()">Close</h3>
     </div>
-
     <div class="overlay" id="overlay2">
         <form action="" method="post" name="form2">
             <!-- Update Form -->
@@ -73,32 +42,12 @@
         </form>
         <h3 onclick="closePopup()">Close</h3>
     </div>
-
-    <script>
-        var popup = document.getElementById("overlay");
-        var popup2 = document.getElementById("overlay2");
-
-        function openPopup() {
-            popup.style.display = "block";
-        }
-
-        function openPopup2(employeeId) {
-            document.getElementById("employee_id").value = employeeId;
-            popup2.style.display = "block";
-        }
-
-        function closePopup() {
-            popup.style.display = "none";
-            popup2.style.display = "none";
-        }
-    </script>
+    <script src="crud.js"></script>
     <?php
     $conn = new mysqli("localhost", "root", "", "myemployees");
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     // create a new employee
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['fname'])) {
@@ -113,7 +62,6 @@
                 echo "Employee not added";
             }
         }
-
         // update the details
         if (isset($_POST['updatefname'])) {
             $employeeId = $_POST['employee_id'];
@@ -129,7 +77,6 @@
             }
         }
     }
-
     // delete system
     if (isset($_GET['delete_id'])) {
         $deleteId = $_GET['delete_id'];
@@ -140,7 +87,6 @@
             echo "Employee not deleted";
         }
     }
-
     // read system
     $result = mysqli_query($conn, "SELECT * FROM scriptingLanguage");
     if (mysqli_num_rows($result) > 0) {
@@ -153,10 +99,7 @@
     } else {
         echo "No employees found";
     }
-
     $conn->close();
     ?>
-
 </body>
-
 </html>
