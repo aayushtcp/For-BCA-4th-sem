@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+  </head>
+  <style>
+
+  </style>
+  <body>
+      <h2>Simple Calculator</h2>
+      <form onsubmit="submitted(event)">
+        <input type="text" placeholder="Operand" class="operandone" name="operandone" id="" value="" />
+        <input type="text" placeholder="Operand" class="operandtwo" name="operandtwo" id="" value="" />
+        <button type="button" onclick="add()">Add</button>
+        <button type="button" onclick="sub()">Sub</button>
+        <button type="button" onclick="mul()">Mul</button>
+        <button type="button" onclick="div()">Div</button>
+        <button type="button" onclick="mod()">Mod</button>
+        
+        <input class="result" type="text" placeholder="Result" name="result" id="" value="" />
+      </form>
+      <script>
+        function submitted(event) {
+          event.preventDefault(); // Prevent form submission
+        }
+
+        function add() {
+          let a = parseFloat(document.querySelector(".operandone").value);
+          let b = parseFloat(document.querySelector(".operandtwo").value);
+          let result = a + b;
+          document.querySelector(".result").value = result;
+        }
+
+        function sub() {
+          let a = parseFloat(document.querySelector(".operandone").value);
+          let b = parseFloat(document.querySelector(".operandtwo").value);
+          let result = a - b;
+          document.querySelector(".result").value = result;
+        }
+
+        function mul() {
+          let a = parseFloat(document.querySelector(".operandone").value);
+          let b = parseFloat(document.querySelector(".operandtwo").value);
+          let result = a * b;
+          document.querySelector(".result").value = result;
+        }
+
+        function div() {
+          let a = parseFloat(document.querySelector(".operandone").value);
+          let b = parseFloat(document.querySelector(".operandtwo").value);
+          let result = a / b;
+          document.querySelector(".result").value = result;
+        }
+
+        function mod() {
+          let a = parseFloat(document.querySelector(".operandone").value);
+          let b = parseFloat(document.querySelector(".operandtwo").value);
+          let result = a % b;
+          document.querySelector(".result").value = result;
+        }
+      </script>
+  </body>
+</html>

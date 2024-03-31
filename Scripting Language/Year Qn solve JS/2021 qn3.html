@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function changeBackground(){
+            let screen = document.querySelector("body");
+            const colors = ["red", "green", "blue", "yellow", "pink", "chocolate"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            screen.style.backgroundColor = randomColor;
+        }
+
+        setInterval(changeBackground, 1000);
+        changeBackground();
+    </script>
+</body>
+</html>
