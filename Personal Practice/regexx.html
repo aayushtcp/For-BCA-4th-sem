@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="formsubmitted()">
+        Number: <input type="number" class="number">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        formsubmitted = () => {
+            let number = document.querySelector(".number").value;
+            let numsec = /^9\d{9}$/;
+            if (numsec.test(number)) {
+                alert("number valid");
+            }
+            else {
+                alert("number not valid");
+            }
+        }
+    </script>
+</body>
+
+</html>
