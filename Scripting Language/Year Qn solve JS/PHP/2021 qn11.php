@@ -29,13 +29,17 @@
         $regnum = trim($_POST["regnum"]);
         $email = trim($_POST["email"]);
 
-        if (!$regnum) {
-            echo "Please input the reg num";
-        } elseif (!$email) {
-            echo "Please input the email";
+        if (!empty($regnum) && !empty($email)) {
+            if (!$regnum) {
+                echo "Please input the reg num";
+            } elseif (!$email) {
+                echo "Please input the email";
+            } else {
+                // here the insert code goes
+                echo "Perfect";
+            }
         } else {
-            // here the insert code goes
-            echo "Perfect";
+            echo "empty detected";
         }
     }
     ?>

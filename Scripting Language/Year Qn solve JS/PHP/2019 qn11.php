@@ -34,22 +34,38 @@
     </fieldset>
 
     <?php
+    // for DB connection
+    $conn = new mysqli("localhost", "root", "", "myemployees");
+    if ($conn->connect_error) {
+        die("Failed to connect" . $conn->connect_error);
+    }
+
+    $pattern = '/^[a-zA-Z]+[0-9]+$/';
     $flag = 0;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fullname = $_POST["fullname"];
         $email = $_POST["email"];
         $username = $_POST["username"];
         $password = $_POST["password"];
-        if (strlen($fullname) > 10) {
+        if (strlen($fullname) > 40) {
             echo "less than 40 characters";
         } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "email not valid";
+        } else if (!preg_match($pattern, $username)) {
+            echo "Username not valid";
         } else if (strlen($password) < 8) {
             echo "Password not valid";
         } else {
-            // insert in db code yesma halam hai... ma paxi halxu
+            // if all above needs are fulfilled then we will save the data in database
+            $sql = mysqli_query($conn, "INSERT INTO infos(fullname,email,username,password) VALUES ('$fullname', '$email', '$username','$password')");
+            if ($sql) {
+                echo "Sucessfully Stored";
+            } else {
+                echo "DB failed later";
+            }
         }
     }
+    $conn->close();
     ?>
 </body>
 
