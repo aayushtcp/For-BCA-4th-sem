@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+    .dynamicdiv{
+        height: 300px;
+        width: 300px;
+        background-color: violet;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <h2>JQuery Practice</h2>
+
+    <div class="dynamicdiv">
+
+    </div>
+    <button class="hidebtn">Hide</button>
+    <button class="showbtn">Show</button>
+
+    <script>
+        $(function(){
+            $(".hidebtn").click(function(){
+                $(".dynamicdiv").hide("slow")
+            });
+            
+            $(".showbtn").click(function(){
+                $(".dynamicdiv").show("slow")
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<style>
+    .box {
+        height: 300px;
+        width: 300px;
+        background-color: violet;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    .draggable {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 10px;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="box">
+        DropHere
+    </div>
+    <div class="draggable">Drag me</div>
+
+    <script>
+        $(function () {
+            $(".box").droppable({
+                drop: function(event, ui){
+                    alert("Dropped");
+                }
+            });
+            $(".draggable").draggable();
+
+        });
+    </script>
+</body>
+
+</html>
