@@ -1,11 +1,8 @@
 <!-- Write a JQuery Code to distinguish between left and right click -->
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>JQuery | Left Right</title>
 </head>
-
 <body>
     <h2>Click left or right button of mouse</h2>
     <button type="button">Click</button>
@@ -18,11 +15,11 @@
             switch (event.which) { 
                 case 1: 
                     document.querySelector('.output').innerHTML = 
-                        'Left Mouse Button'; 
+                        'Left Mouse Button Clicked'; 
                     break;  
                 case 3: 
                     document.querySelector('.output').innerHTML = 
-                        'Right Mouse Button'; 
+                        'Right Mouse Button Clicked'; 
                     break; 
                 default: 
                     break; 
@@ -31,5 +28,4 @@
         });
     </script>
 </body>
-
 </html>
