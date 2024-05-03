@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h3>The largest and smallest</h3>
-    <p class="output"></p>
-    <script>
-        function myfunc(){
-            var arr = [1,5,2,3,7,10,100,37];
-            arr.sort(function(a,b){return a-b});
-            document.write("The smallest is:" + arr[0]); 
-            document.write("<br>");
-            document.write("The largest is:" + arr[7]); 
-        }
 
-        myfunc();
-    </script>
+<body>
+    <h3>Hello Array</h3>
+    <h3 class="result"></h3>
+
 </body>
+
+<script>
+    let arr = [1, 2, 4, 13, 5, 3, 6, 9, 10, 8];
+    document.write(arr)
+
+    // using IIFE
+    arr.sort(function (a, b) {
+        return a - b
+    });
+
+    let res = document.querySelector(".result");
+    res.innerHTML = `The smallest is ${arr[0]} and the greatest is ${arr[9]}`;
+</script>
+
 </html>

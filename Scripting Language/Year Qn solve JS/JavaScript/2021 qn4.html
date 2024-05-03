@@ -11,15 +11,15 @@
     <h3>factorial</h3>
     <p class="result"></p>
     <script>
-        let n = prompt("Enter a Number: ");
+        let n = 5;
+        let product = 1;
         fact = (n) => {
-            let product = 1;
             for (let i = 1; i <= n; i++) {
                 product = product * i;
             }
-            document.querySelector(".result").innerText = product;
         }
         fact(n);
+        document.querySelector(".result").innerHTML = product;
     </script>
 </body>
 

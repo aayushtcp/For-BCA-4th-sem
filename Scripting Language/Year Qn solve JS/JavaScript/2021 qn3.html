@@ -10,13 +10,14 @@
     <script>
         function changeBackground(){
             let screen = document.querySelector("body");
-            const colors = ["red", "green", "blue", "yellow", "pink", "chocolate"];
-            let randomColor = colors[Math.floor(Math.random() * colors.length)];
-            screen.style.backgroundColor = randomColor;
+            let colors = ["red", "green", "blue", "violent", "chocolate", "yellow"];
+            let randomColors = colors[Math.floor(Math.random()*colors.length)];
+            screen.style.backgroundColor = randomColors;
         }
 
         setInterval(changeBackground, 1000);
         changeBackground();
+        
     </script>
 </body>
 </html>
