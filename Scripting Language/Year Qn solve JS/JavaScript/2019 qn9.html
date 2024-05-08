@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Basic JS form</legend>
+        <form action="" method="post">
+            <input type="text" placeholder="Operand" class="operand1">
+            <br>
+            <input type="text" placeholder="Operand" class="operand2">
+            <br>
+            <button class="add" onclick="add(event)">Add</button>
+            <button class="sub">Sub</button>
+            <button class="mul">Mul</button>
+            <br>
+            <button class="div">Div</button>
+            <button class="mod">Mod</button>
+            <br>
+
+        </form>
+        <label for="">Result:</label>
+        <br>
+        <input class="result" type="text" readonly disabled>
+    </fieldset>
+
+
+    <script>
+
+        function add(e) {
+            e.preventDefault();
+            let a = +document.querySelector(".operand1").value;
+            let b = parseInt(document.querySelector(".operand2").value);
+
+            let res = a+b;
+            document.querySelector(".result").value = res;
+
+        }
+
+        // do like this
+
+    </script>
+</body>
+
+</html>

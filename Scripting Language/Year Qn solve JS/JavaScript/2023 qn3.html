@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        red: <input type="radio" onclick="redColor(event)">
+        green: <input type="radio" onclick="greenColor(event)">
+        blue: <input type="radio" onclick="blueColor(event)">
+    </form>
+
+
+    <script>
+        function redColor(e){
+            e.preventDefault();
+            document.querySelector("body").style.backgroundColor = "red";
+        }
+        function greenColor(e){
+            e.preventDefault();
+            document.querySelector("body").style.backgroundColor = "green";
+        }
+        function blueColor(e){
+            e.preventDefault();
+            document.querySelector("body").style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

@@ -6,66 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    fieldset {
+        width: 200px;
+    }
+</style>
 
 <body>
-    <fieldset style="width: 500px;">
-        <legend>Register</legend>
-        <form action="" method="post">
-            <label for="">*required fields</label>
-            <br>
-            <label for="">Your Full name*:</label>
-            <br>
-            <input type="text" name="fullname" required>
-            <br><br>
-            <label for="">Email Address*:</label>
-            <br>
-            <input type="text" name="email">
-            <br><br>
-            <label for="">User Name*:</label>
-            <br>
-            <input type="text" name="username">
-            <br><br>
-            <label for="">Password*:</label>
-            <br>
-            <input type="password" name="password">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </fieldset>
+    <center>
+        <fieldset>
+            <legend>Register</legend>
+            <label for="">*required data</label>
+            <form action="" method="post">
+                <label for="">Your Full name*:</label>
+                <br>
+                <input type="text" name="fullname">
+                <br>
+                <label for="">Email Address*:</label>
+                <br>
+                <input type="email" name="email">
+                <br>
+                <label for="">User Name*:</label>
+                <br>
+                <input type="text" name="username">
+                <br>
+                <label for="">Password*:</label>
+                <br>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <input type="submit">
+            </form>
+        </fieldset>
+    </center>
 
     <?php
-    // for DB connection
     $conn = new mysqli("localhost", "root", "", "myemployees");
-    if ($conn->connect_error) {
-        die("Failed to connect" . $conn->connect_error);
+    if($conn->connect_error){
+        die("Error in database Connection".$conn->connect_error);
     }
-
-    $pattern = '/^[a-zA-Z]+[0-9]+$/';
-    $flag = 0;
+    $usernamePattern = '/^[a-zA-z]+[0-9]+$/';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $fullname = $_POST["fullname"];
-        $email = $_POST["email"];
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        if (strlen($fullname) > 40) {
-            echo "less than 40 characters";
-        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "email not valid";
-        } else if (!preg_match($pattern, $username)) {
+        $fullname = trim($_POST['fullname']);
+        $email = trim($_POST['email']);
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
+
+        if(strlen($fullname) > 40 || empty($fullname)){
+            echo "Fullname not valid";
+        }
+        else if(!filter_var($email,FILTER_VALIDATE_EMAIL) || empty($email)){
+            echo "Email not valid";
+        }
+        else if(!preg_match($usernamePattern,$username) || empty($username)){
             echo "Username not valid";
-        } else if (strlen($password) < 8) {
-            echo "Password not valid";
-        } else {
-            // if all above needs are fulfilled then we will save the data in database
+        }
+        else if(strlen($password)<8 || empty($password)){
+            echo "Password must be above 8 Characters";
+        }
+        else{
             $sql = mysqli_query($conn, "INSERT INTO infos(fullname,email,username,password) VALUES ('$fullname', '$email', '$username','$password')");
-            if ($sql) {
-                echo "Sucessfully Stored";
-            } else {
-                echo "DB failed later";
+            if($sql){
+                echo "Inserted Successfully";
+            }
+            else{
+                echo "Error in Insert";
             }
         }
     }
+
     $conn->close();
+
+
+
     ?>
 </body>
 

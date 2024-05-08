@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        padding: 50px;
+        background-color: red;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+</style>
+
+<body>
+
+    <div class="imageanddesc">
+
+        <img src="https://images.unsplash.com/photo-1714907135093-e60f0a730574?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8"
+            alt="">
+
+        <p class="mypara" onmouseover="overMouse()" onmouseout="mouseOut()">This is the description before triggering the event</p>
+    </div>
+
+    <script>
+        function mouseOut() {
+            document.querySelector(".mypara").innerHTML = "This is the description when mouse is out";
+        }
+        function overMouse() {
+            document.querySelector(".mypara").innerHTML = "This is the description when mouse is Over";
+        }
+    </script>
+
+</body>
+
+</html>

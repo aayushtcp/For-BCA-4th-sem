@@ -1,38 +1,47 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Chess Board</title>
-    <style>
-        .board {
-            width: 400px;
-            height: 400px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .square {
-            width: 50px;
-            height: 50px;
-            box-sizing: border-box;
-        }
-        .white {
-            background-color: #f0d9b5;
-        }
-        .black {
-            background-color: #b58863;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<style>
+    .white {
+        background-color: gray;
+    }
+
+    .black {
+        background-color: #333;
+    }
+
+    .box {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .square {
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+    }
+</style>
+
 <body>
-    <div class="board">
+
+    <div class="box">
         <?php
-        for ($row = 0; $row < 8; $row++) {
-            for ($col = 0; $col < 8; $col++) {
-                $color = ($row + $col) % 2 == 0 ? 'white' : 'black';
-                echo '<div class="square ' . $color . '"></div>';
+        for ($i = 0; $i < 8; $i++) {
+            for ($j = 0; $j < 8; $j++) {
+                $color = ($i + $j) % 2 == 0 ? "white" : "black";
+                echo '<div class="square ' . $color .   '"></div>';
             }
         }
         ?>
     </div>
+
 </body>
+
 </html>
