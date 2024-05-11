@@ -51,8 +51,6 @@ int main() {
     int n = sizeof(requests) / sizeof(requests[0]);
     int head = 53;
     char direction = 'l';
-
     LOOK(requests, n, head, direction);
-
     return 0;
 }

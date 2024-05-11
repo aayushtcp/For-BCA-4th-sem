@@ -45,7 +45,6 @@ void CLOOK(int arr[], int n, int head, char direction) {
             printf("%d ", arr[i]);
         }
     }
-
     printf("\n");
 }
 
@@ -54,8 +53,6 @@ int main() {
     int n = sizeof(requests) / sizeof(requests[0]);
     int head = 53;
     char direction = 'l';
-
     CLOOK(requests, n, head, direction);
-
     return 0;
 }
