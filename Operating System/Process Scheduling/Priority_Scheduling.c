@@ -6,13 +6,11 @@ int main()
     int totwt = 0, totta = 0;
     float awt, ata;
     char pn[10][10], t[10];
-    // clrscr();
     printf("Enter the number of process:");
     scanf("%d", &n);
     for (i = 0; i < n; i++)
     {
         printf("Enter process name,arrivaltime,execution time & priority:");
-        // flushall();
         scanf("%s%d%d%d", pn[i], &at[i], &et[i], &p[i]);
     }
     for (i = 0; i < n; i++)
@@ -35,9 +33,7 @@ int main()
             }
         }
     for (i = 0; i < n; i++)
-
     {
-
         if (i == 0)
         {
             st[i] = at[i];
