@@ -28,18 +28,39 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $regnum = trim($_POST["regnum"]);
         $email = trim($_POST["email"]);
+        $image = $_FILES['image'];
 
-        if (!empty($regnum) && !empty($email)) {
-            if (!$regnum) {
-                echo "Please input the reg num";
-            } elseif (!$email) {
-                echo "Please input the email";
-            } else {
-                // here the insert code goes
-                echo "Perfect";
-            }
+        if (!$regnum || !$email) {
+            echo "empty detected ";
         } else {
-            echo "empty detected";
+            // $conn = new mysqli("localhost", "root", "" , "nameofdb");
+            // if ($conn->connect_error){
+            //     die("DB not connecting".$conn->connect_error);
+            // }
+            $type = ['image/png', 'image/jpg', 'image/jpeg'];
+
+
+            if (!empty($reqnum) || !empty($email) || !empty($image)) {
+
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    echo "email is in proper format! Please uncorrect the email";
+                }
+                else if ($_FILES['image']['error'] == 0) {
+                    if ($_FILES['image']['size'] < 5242880) {
+                        if (in_array($_FILES['image']['type'], $type)) {
+                            echo "All fine image";
+                        } else {
+                            echo "type error";
+                        }
+                    } else {
+                        echo "size is above 5 mb";
+                    }
+                }
+            
+            }
+            else{
+                echo "empty detecsted";
+            }
         }
     }
     ?>

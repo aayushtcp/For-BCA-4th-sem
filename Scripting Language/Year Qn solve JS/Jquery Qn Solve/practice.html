@@ -4,21 +4,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datepicker Example</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $(".message").datepicker();
-        });
-    </script>
+
+
+
 </head>
+<style>
+    .dynamicdiv,
+    .dropdiv {
+        height: 300px;
+        width: 300px;
+        background-color: violet;
+        border-radius: 10px;
+    }
+
+    .menu {
+        width: 40vw;
+    }
+</style>
 
 <body>
+    <h2>JQuery Practice</h2>
 
- <p class="message">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio excepturi aspernatur saepe tenetur iure natus porro esse suscipit doloremque, accusantium voluptate eaque dolorem autem alias ad eveniet voluptates sint. Fugiat!</p>
+    <div class="dynamicdiv">
 
+    </div>
+    <button class="hidebtn">Hide</button>
+    <button class="showbtn" title="This button show the div again">Show</button>
+
+    <div class="dropdiv">
+
+    </div>
+
+    <ul class="sortul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <div class="accordiondiv">
+        <h2>This is heading</h2>
+        <p>This is paragraph</p>
+        <h2>This is heading</h2>
+        <p>This is paragraph</p>
+        <h2>This is heading</h2>
+        <p>This is paragraph</p>
+    </div>
+
+    <div class="autocompletee">
+        City: <input type="text">
+    </div>
+
+    <div class="dialogbox">
+        <h2>Warning</h2>
+        <p>Radion ahed!</p>
+    </div>
+
+    <ul class="menu">
+        <li>
+            <div>1</div>
+        </li>
+        <li>
+            <div>2</div>
+            <ul>
+                <li>
+                    <div>i</div>
+                </li>
+                <li>
+                    <div>ii</div>
+                </li>
+                <li>
+                    <div>iii</div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div>3</div>
+        </li>
+        <li>
+            <div>4</div>
+        </li>
+    </ul>
+
+    <div class="progressdiv"></div>
+
+    <div class="selectCountry">
+
+    </div>
+
+    <button class="addclassbtn">Add Class in Progress Div</button>
+    <script>
+        // hide and show code
+        // $(function(){
+        //     $(".hidebtn").click(function(){
+        //         $(".dynamicdiv").hide("slow");
+        //     });
+
+        //     $(".showbtn").click(function(){
+        //         $(".dynamicdiv").show("slow");
+        //     });
+        // });
+
+
+        // drag and drop code
+        // $(function () {
+        //     $(".dropdiv").droppable({
+        //         drop: function(event,ui){
+        //             alert("dropped");
+        //         }
+        //     });
+        //     $(".dynamicdiv").draggable();
+        // });
+
+
+        // resizeable...selectable
+        // $(function(){
+        //     // // $(".dynamicdiv").resizable();
+        //     $(".dynamicdiv").selectable();
+        // });
+
+
+        // sortable
+        // $(function(){
+        //     $(".sortul").sortable();
+        // });
+
+
+
+        // =====widgets
+        // accordion
+        // $(function(){
+        //     $(".accordiondiv").accordion();
+        // });
+
+
+        // autocomplete
+        // let arr = ["hetauda", "harnamadi", "hedamba", "pkr", "ktm"];
+        // $(function(){
+        //     $("input").autocomplete({
+        //         source: arr
+        //     });
+        // });
+
+
+        // dialogbox
+        // $(function(){
+        //     $(".dialogbox").dialog();
+        // });
+
+
+        // datpicker calender
+        // $(function(){
+        //     $("input").datepicker();
+        // });
+
+
+        // menu simple (li bhitra div hunxa)
+        // $(function () {
+        //     $(".menu").menu();
+        // });
+
+
+        // progress bar
+        // $(function(){
+        //     $(".progressdiv").progressbar({
+        //         value: 40
+        //     });
+        // });
+
+
+        // tabs
+        // $(function(){
+        //     $(".menu").tabs();
+        // });
+
+
+        // tooltip (title huna parxa)
+        // $(function(){
+        //     $(".showbtn").tooltip();
+        // });
+
+
+        // slider
+        // $(function(){
+        //     $(".progressdiv").slider({
+        //         value: 40
+        //     });
+        // });
+
+
+        // spinner
+        // $(function () {
+        //     $(".selectCountry").spinner();
+        // });
+
+
+        // ====effects show and hide in top already done
+        // addclass
+        $(function(){
+            $(".addclassbtn").click(function(){
+
+                $("progressdiv").addClass("thisbar", 1000);
+            });
+
+        });
+
+
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <h3 class="result"></h3>
-
+    <h3>Hello array</h3>
 
     <script>
 
-        let arr = [1, 2, 3, 5, 11, 22, 66, 77, 11, 333];
+        let arr = [12,12,1,4,5,22,67,44,89,70];
 
-        arr.sort(function (a, b) { return a - b });
 
-        document.querySelector(".result").innerHTML = "The smallest is: " + arr[0] + " and the largest is: " + arr[9];
+        arr.sort(function(a,b){
+            return a-b;
+        });
+
+        console.log(arr)
+        document.write(arr);
 
     </script>
 </body>
-
 </html>

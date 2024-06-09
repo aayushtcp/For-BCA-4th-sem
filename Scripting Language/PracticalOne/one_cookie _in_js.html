@@ -1,29 +1,30 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Cookie in JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<style>
-    * {
-        font-family: sans-serif;
-    }
-</style>
+
 <body>
-    <h1>Cookie in JS</h1>
+    <h2>Cookie in JS</h2>
     <script>
-        var username = "Aayush";
-        function setusercookie() {
+
+        var username = prompt("Enter your name: ");
+        function userCookie() {
             if (username) {
                 var d = new Date();
-                var expire =d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
-                document.cookie = "username=" + username + ';expires=' + d.toUTCString() + ';path=/';
+                var expire = d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+                document.cookie = "username= " + username + ";expires=" + d.toUTCString() + ";path=/";
                 alert("Hello" + username);
-                console.log("Hello " + username);
             }
-            else{
-                alert("Error in code");
+            else {
+                alert("error in code");
             }
         }
-        setusercookie();
+        userCookie();
     </script>
 </body>
+
 </html>

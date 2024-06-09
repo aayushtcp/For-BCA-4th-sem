@@ -45,36 +45,92 @@
     if($conn->connect_error){
         die("Error in database Connection".$conn->connect_error);
     }
-    $usernamePattern = '/^[a-zA-z]+[0-9]+$/';
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usernamePattern = '/^[a-zA-Z]+[0-9]+$/';
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
         $fullname = trim($_POST['fullname']);
-        $email = trim($_POST['email']);
+        $email = trim($_POST["email"]);
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
+        if(strlen($fullname)>40 || empty($fullname)){
+            echo "Fullname error";
+        }
 
-        if(strlen($fullname) > 40 || empty($fullname)){
-            echo "Fullname not valid";
-        }
         else if(!filter_var($email,FILTER_VALIDATE_EMAIL) || empty($email)){
-            echo "Email not valid";
+            echo "email is not correct";
         }
-        else if(!preg_match($usernamePattern,$username) || empty($username)){
-            echo "Username not valid";
+
+        else if(!preg_match($usernamePattern, $username) || empty($username)){
+            echo "USername error";
         }
-        else if(strlen($password)<8 || empty($password)){
-            echo "Password must be above 8 Characters";
+
+        else if(strlen($password) < 8 || empty($password)){
+            echo "Password problem";
         }
+
         else{
-            $sql = mysqli_query($conn, "INSERT INTO infos(fullname,email,username,password) VALUES ('$fullname', '$email', '$username','$password')");
-            if($sql){
-                echo "Inserted Successfully";
+            $sql = mysqli_query($conn, "INSERT INTO infos(fullname, email, username,password) VALUES ('$fullname', '$email', '$username', '$password')");
+
+            if ($sql){
+                echo "Successfully signuped";
             }
             else{
-                echo "Error in Insert";
+                echo "Signup error";
             }
+
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //     $fullname = trim($_POST['fullname']);
+    //     $email = trim($_POST['email']);
+    //     $username = trim($_POST['username']);
+    //     $password = trim($_POST['password']);
+
+
+    //     if(strlen($fullname) > 40 || empty($fullname)){
+    //         echo "Fullname not valid";
+    //     }
+    //     else if(!filter_var($email,FILTER_VALIDATE_EMAIL) || empty($email)){
+    //         echo "Email not valid";
+    //     }
+    //     else if(!preg_match($usernamePattern,$username) || empty($username)){
+    //         echo "Username not valid";
+    //     }
+    //     else if(strlen($password)<8 || empty($password)){
+    //         echo "Password must be above 8 Characters";
+    //     }
+    //     else{
+    //         $sql = mysqli_query($conn, "INSERT INTO infos(fullname,email,username,password) VALUES ('$fullname', '$email', '$username','$password')");
+    //         if($sql){
+    //             echo "Inserted Successfully";
+    //         }
+    //         else{
+    //             echo "Error in Insert";
+    //         }
+    //     }
+    // }
 
     $conn->close();
 

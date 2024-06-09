@@ -8,23 +8,30 @@
 </head>
 
 <body>
-    <h2>Get and Post PHP</h2>
-
-    <form action="" method="post"> <!--change get post here -->
-        Name: <input type="text" name="name">
-        <input type="submit" value="Submit">
+    <form action="" method="post">
+        name: <input type="text" name="name">
+        <input type="submit" name="postBtn">
     </form>
+
+    <form action="" method="get">
+        address: <input type="text" name="address">
+        <input type="submit" name="getBtn">
+    </form>
+
+
     <?php
-    // post
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_GET["name"];
+    // Using POST
+    if(isset($_POST["postBtn"])){
+        $name = $_POST["name"];
+
         echo "$name";
     }
-    // get
-    // if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    //     $name = $_GET["name"];
-    //     echo "$name";
-    // }
+
+    // Using GET
+    if(isset($_GET['getBtn'])){
+        $address = $_GET['address'];
+        echo "$address";
+    }
     ?>
 </body>
 

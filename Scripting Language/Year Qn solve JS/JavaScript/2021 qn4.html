@@ -8,20 +8,21 @@
 </head>
 
 <body>
-    <h3>factorial</h3>
-    <p class="result"></p>
+
     <script>
-        let n = 4;
+
 
         fact = (n) => {
-            let product = 1;
-            for (let i = 1; i <= n; i++) {
+            let nn = parseInt(n);
+            let product = 1, i;
+            for (i = 1; i <= nn; i++) {
                 product = product * i;
             }
             return product;
         }
 
-        document.querySelector(".result").innerHTML = fact(n);
+        document.write(fact(5));
+
 
     </script>
 </body>

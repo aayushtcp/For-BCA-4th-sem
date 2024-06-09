@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Time</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <p id="liveTime"></p>
+
+    <p class="livetime"></p>
+
+
 
     <script>
         function updateTime() {
-            var date = new Date();
-            var getHours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-            var getMinutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-            var getSeconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-            document.getElementById("liveTime").innerText = `${getHours}: ${getMinutes}: ${getSeconds}`;
+            let d = new Date();
+            let Hours = d.getHours() < 10 ? "0" + d.getHours() : d.getHours();
+            let Minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+            let Seconds = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+            document.querySelector(".livetime").innerText = `${Hours}: ${Minutes}: ${Seconds}`; 
+
         }
 
         setInterval(updateTime, 1000);

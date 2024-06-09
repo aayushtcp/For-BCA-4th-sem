@@ -13,8 +13,8 @@
         <br><br>
         Gender:
         <br>
-        Male:<input value="male" type="radio">
-        Female:<input value="female" type="radio">
+        Male:<input value="male" name="gender" type="radio">
+        Female:<input value="female" name="gender" type="radio">
         <br><br>
         Education: <select name="education" id="education">
             <option value="p2">Plus 2</option>
@@ -28,7 +28,9 @@
     <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $education = $_POST['education'];
-            echo "$education";
+            $gender = $_POST["gender"];
+            echo "$education\n";
+            echo "$gender";
         }
     
     ?>
